@@ -17,6 +17,8 @@ namespace BitirmePro.Controllers
         public ActionResult YeniTablo(int Sutun,int Satir,int Kisi)
         {
             ViewBag.su = Sutun;
+            ViewBag.sa = Satir;
+            ViewBag.ki = Kisi;
             return View();
         }
 
