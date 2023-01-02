@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>@ViewBag.Title - ASP.NET Uygulamam</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .duz {
+            float: left
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #bdbebd ">
+        <div class="container " style="height: 75px" >
+            <div class="nav navbar-nav duz ">
+                <img style="height:75px;width:90px" src="~/Content/image/kelebek.png" />
+            </div>
+            <span></span>
+            <br />
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <ul class="nav navbar-nav">
+                    <li style="font-size:large">@Html.ActionLink("KELEBEK", "Index", "Home", new { @class = "navbar-brand" }, new { style = "color: darkred " })</li>
+                </ul>
+            </div>
+            <div class="navbar-collapse collapse ">
+                <ul class="nav navbar-nav">
+                    <li style="font-size:medium">@Html.ActionLink("Giriş", "Index", "Home", null, new { style = "color: darkred" })</li>
+                    <li style="font-size:medium">@Html.ActionLink("Tablo Oluştur", "TabloOlustur", "TabloOlustur", null, new { style = "color: darkred" })</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - ASP.NET Uygulamam</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

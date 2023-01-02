@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            .city {
+                background-color: silver;
+                color: black;
+                border: 2px solid black;
+                margin: 20px;
+                padding: 15px;
+                width: 250px;
+                text-align: center
+            }
+        </style>
+    </head>
+
+    <body id="container">
+        <div class="city">
+            <h2>@Html.ActionLink("Sınıf-1", "Sinif1", "Tablolar", new { style = "color:black" })</h2>
+
+        </div>
+        <div class="city">
+            <h2>@Html.ActionLink("Sınıf-2", "Sinif2", "Tablolar", new { style = "color:black" })</h2>
+
+        </div>
+        <div class="city">
+            <h2>@Html.ActionLink("Sınıf-3", "Sinif3", "Tablolar", new { style = "color:black" })</h2>
+
+        </div>
+
+    </body>
+</html>

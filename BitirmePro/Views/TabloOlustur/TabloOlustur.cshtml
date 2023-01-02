@@ -1,0 +1,120 @@
+﻿@model BitirmePro.Models.Tablo
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+    <style>
+        .con {
+            margin: 30px;
+            padding: 30px;
+            float: left;
+            width: 2000px;
+        }
+
+        .column {
+            float: left;
+            width: 320px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm("YeniTablo", "TabloOlustur", FormMethod.Post))
+    {
+        <div id="app">
+            <form id="form" runat="server">
+                <div class="con">
+                    <h2>YENİ SINIF OLUŞTURMA</h2>
+                    <br />
+                    <div class="row">
+                        <div class="column">
+                            <label for="sutun">Kaç Sütun İstiyorsunuz?</label>
+                            <input name="sutun" runat="server" CssClass="form-control"
+                                   placeholder="sütun" v-on:input="calistir1" v-model="sutun" />
+                            <h6 style="color:indianred">{{uyari1}}</h6>
+                        </div>
+                        <div class="column">
+                            <label for="satir">Kaç Satır İstiyorsunuz?</label>
+                            <input name="satir" runat="server" CssClass="form-control"
+                                   placeholder="satır" v-on:input="calistir2" v-model="satir" />
+                            <h6 style="color:indianred">{{uyari2}}</h6>
+                        </div>
+                        <div class="column">
+                            <label for="kisi">Bir Sırada Kaç Kişi Otursun?</label>
+                            <input name="kisi" runat="server" CssClass="form-control"
+                                   placeholder="kişi sayısı" v-on:input="calistir3" v-model="kisi" />
+                            <h6 style="color:indianred">{{uyari3}}</h6>
+                        </div>
+                    </div>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+
+        </div>
+        <script>
+            const { createApp } = Vue
+
+            createApp({
+                data() {
+                    return {
+                        uyari1: null,
+                        uyari2: null,
+                        uyari3: null
+
+                    }
+
+                },
+                methods: {
+
+                    calistir1: function (event) {
+                        var gelen = event.target.value
+                        console.log(gelen)
+
+                        if (isNaN(parseInt(gelen)) || parseInt(gelen) <= 0 || parseInt(gelen) > 5) {
+                            this.uyari1 = 'Bir sayı giriniz!'
+                        }
+                        else {
+                            this.uyari1 = null
+                        }
+                    },
+                    calistir2: function (event) {
+                        var gelen = event.target.value
+                        console.log(gelen)
+
+                        if (isNaN(parseInt(gelen)) || parseInt(gelen) <= 0 || parseInt(gelen) > 20) {
+                            this.uyari2 = 'Bir sayı giriniz!'
+                        }
+                        else {
+                            this.uyari2 = null
+                        }
+                    },
+                    calistir3: function (event) {
+                        var gelen = event.target.value
+                        console.log(gelen)
+
+                        if (isNaN(parseInt(gelen)) || parseInt(gelen) <= 0 || parseInt(gelen) > 3) {
+                            this.uyari3 = 'Bir sayı giriniz!'
+                        }
+                        else {
+                            this.uyari3 = null
+                        }
+                    },
+
+                }
+            }).mount('#app')
+        </script>
+    }
+</body>
+</html>

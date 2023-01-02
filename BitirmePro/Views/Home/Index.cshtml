@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<head>
+    <style>
+        .con {
+            margin: auto;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body class="con">
+    <div class="con">
+        <div style="margin-left:75px">
+            <h2 style="color:black">SINIFLAR</h2>
+        </div>
+        <div>
+            @Html.Action("Tablolar", "Tablolar")
+        </div>
+    </div>
+</body>

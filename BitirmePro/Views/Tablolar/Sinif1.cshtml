@@ -1,0 +1,96 @@
+﻿@model List<BitirmePro.Models.Ogrenci>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Sınıf2</title>
+    <style>
+        .con {
+            margin: 30px;
+            padding: 30px;
+            float: left;
+            width: 2000px;
+        }
+
+        .column {
+            float: left;
+            width: 320px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            text-align: left;
+            padding: 15px;
+            margin: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="con">
+        <span></span>
+        @{
+
+            foreach (var ogr in Model)
+            {
+                <div class="row">
+
+                    @{
+                        for (int ı = 0; ı < 3; ı++)
+                        {
+                            <div class="column">
+                                <table>
+                                    @{
+                                        for (int e = 0; e < 8; e++)
+                                        {
+                                            <tr style="height:90px">
+                                                @{
+                                                    for (int b = 0; b < 2; b++)
+                                                    {
+
+                                                        <th>
+
+
+                                                            <h5>@ogr.Id</h5>
+                                                            <h5>@ogr.AdSoyad</h5>
+
+
+                                                        </th>
+
+
+
+                                                    }
+
+                                                }
+
+                                            </tr>
+                                        }
+
+                                    }
+
+                                </table>
+                            </div>
+                        }
+                    }
+
+                </div>
+            }
+        }
+    </div>
+</body>
+</html>
