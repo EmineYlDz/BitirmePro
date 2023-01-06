@@ -1,0 +1,106 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>M-205 Kişi</title>
+
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <style>
+            .con {
+                margin: 30px;
+                padding: 30px;
+                float: left;
+                width: 2000px;
+            }
+
+            .column {
+                float: left;
+                width: 320px;
+            }
+
+            /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        @using (Html.BeginForm("Sinif2", "Tablolar", FormMethod.Post))
+        {
+            <div id="app">
+                <form id="form" runat="server">
+                    <div class="con">
+                        <h2 style="color:coral">Bir Sırada Oturan Öğrenci Sayısı</h2>
+                        <br />
+                        <div class="row">
+                            <div class="column">
+                                <label for="sutun">İlk Sutun Tek Kişilik</label>
+                            </div>
+                            <div class="column">
+                                <label for="Sutun2">2.Sutunda Kaçar Kişi Otursun?</label>
+                                <input name="Sutun2" runat="server" CssClass="form-control"
+                                       placeholder="2.Sutun" v-on:input="calistir2" v-model="Sutun2" />
+                                <h6 style="color:indianred">{{uyari2}}</h6>
+                            </div>
+                            <div class="column">
+                                <label for="kisi">3.Sutunda Kaçar Kişi Otursun?</label>
+                                <input name="Sutun3" runat="server" CssClass="form-control"
+                                       placeholder="3.Sutun" v-on:input="calistir3" v-model="Sutun3" />
+                                <h6 style="color:indianred">{{uyari3}}</h6>
+                            </div>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+
+            </div>
+            <script>
+                const { createApp } = Vue
+
+                createApp({
+                    data() {
+                        return {
+                            uyari2: null,
+                            uyari3: null
+
+                        }
+
+                    },
+                    methods: {
+                        
+                        calistir2: function (event) {
+                            var gelen = event.target.value
+                            console.log(gelen)
+
+                            if (isNaN(parseInt(gelen)) || parseInt(gelen) <= 0 || parseInt(gelen) > 20) {
+                                this.uyari2 = 'Bir sayı giriniz!'
+                            }
+                            else {
+                                this.uyari2 = null
+                            }
+                        },
+                        calistir3: function (event) {
+                            var gelen = event.target.value
+                            console.log(gelen)
+
+                            if (isNaN(parseInt(gelen)) || parseInt(gelen) <= 0 || parseInt(gelen) > 3) {
+                                this.uyari3 = 'Bir sayı giriniz!'
+                            }
+                            else {
+                                this.uyari3 = null
+                            }
+                        },
+
+                    }
+                }).mount('#app')
+            </script>
+         }
+    </body>
+</html>

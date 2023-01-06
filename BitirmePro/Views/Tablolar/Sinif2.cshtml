@@ -1,17 +1,125 @@
-﻿
+﻿@model List<BitirmePro.Models.Ogrenci>
 @{
     Layout = null;
 }
 
 <!DOCTYPE html>
-
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Sinif2</title>
+    <title>M-205</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .con {
+            margin: 30px;
+            padding: 30px;
+            float: left;
+            width: 2000px;
+        }
+
+        .column {
+            float: left;
+            width: 320px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            text-align: left;
+            padding: 15px;
+            margin: 10px;
+            float: right;
+        }
+    </style>
+
 </head>
-<body>
-    <div> 
-    </div>
-</body>
+    <body>
+
+        <div class="con">
+          <span></span>
+          <div class="row">
+                      <div class="column" >
+                          <table>
+                              @{ 
+                                for(int b = 0; b < 5; b++)
+                                {
+                                    <tr style="height:90px">
+                                        @{ 
+                                        for(int c = 0; c < 1; c++)
+                                        {
+                                            if (Model.Count > 0)
+                                            {
+                                                <th>
+                                                    <h5>@Model[0].Id</h5>
+                                                    <h5>@Model[0].AdSoyad</h5>
+                                                </th>
+                                                Model.RemoveAt(0);
+                                            }
+                                            
+                                        }
+                                        }
+                                    </tr>
+                                }
+                               }
+                          </table>
+                      </div>
+                      <div class="column" >
+                              <table>
+                                  @{
+                                      for (int b = 0; b < 5; b++)
+                                      {
+                                         <tr style="height:90px">
+                                            @{
+                                                for (int c = 0; c < ViewBag.su2; c++)
+                                                {
+                                                    if (Model.Count > 0)
+                                                    {
+                                                        <th>
+                                                            <h5>@Model[0].Id</h5>
+                                                            <h5>@Model[0].AdSoyad</h5>
+                                                        </th>
+                                                        Model.RemoveAt(0);
+                                                    }
+                                                }
+                                            }
+                                        </tr>
+                                      }
+                                  }
+                              </table>
+                      </div>
+                      <div class="column">
+                          <table>
+                              @{
+                                  for (int b = 0; b < 5; b++)
+                                  {
+                                    <tr style="height:90px">
+                                        @{
+                                            for (int c = 0; c < ViewBag.su3; c++)
+                                            {
+                                                if (Model.Count > 0)
+                                                {
+                                                    <th>
+                                                        <h5>@Model[0].Id</h5>
+                                                        <h5>@Model[0].AdSoyad</h5>
+                                                    </th>
+                                                    Model.RemoveAt(0);
+                                                }
+                                            }
+                                        }
+                                    </tr>
+                                  }
+                              }
+                          </table>
+                      </div>
+          </div>
+        </div>
+    </body>
 </html>
