@@ -41,7 +41,7 @@
             float: right;
         }
     </style>
-
+    @{  int x = 1; }
 </head>
 <body>
 
@@ -60,10 +60,12 @@
                                         if (Model.Count > 0)
                                         {
                                             <th>
+                                                <h5>@x</h5>
                                                 <h5>@Model[0].Id</h5>
                                                 <h5>@Model[0].AdSoyad</h5>
                                             </th>
                                             Model.RemoveAt(0);
+                                            x++;
                                         }
 
                                     }
@@ -85,10 +87,12 @@
                                         if (Model.Count > 0)
                                         {
                                             <th>
+                                                <h5>@x</h5>
                                                 <h5>@Model[0].Id</h5>
                                                 <h5>@Model[0].AdSoyad</h5>
                                             </th>
                                             Model.RemoveAt(0);
+                                            x++;
                                         }
                                     }
                                 }
@@ -109,10 +113,12 @@
                                         if (Model.Count > 0)
                                         {
                                             <th>
+                                                <h5>@x</h5>
                                                 <h5>@Model[0].Id</h5>
                                                 <h5>@Model[0].AdSoyad</h5>
                                             </th>
                                             Model.RemoveAt(0);
+                                            x++;
                                         }
                                     }
                                 }
