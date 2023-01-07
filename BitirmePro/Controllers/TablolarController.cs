@@ -24,40 +24,8 @@ namespace BitirmePro.Controllers
             ViewBag.su1 = Sutun1;
             ViewBag.su2 = Sutun2;
             ViewBag.su3 = Sutun3;
-            List<Ogrenci> ogr = new List<Ogrenci>()
-            {
-                new Ogrenci() { Id = 180101029,AdSoyad="Emine Yıldız"},
-                new Ogrenci() { Id = 180101019, AdSoyad = "demir" },
-                new Ogrenci() { Id = 180101049, AdSoyad = "ali" },
-                new Ogrenci() { Id = 180101059,AdSoyad="mehmet"},
-                new Ogrenci() { Id = 180101069, AdSoyad = "ayse" },
-                new Ogrenci() { Id = 180101079, AdSoyad = "sdferrgee" },
-                new Ogrenci() { Id = 180101089, AdSoyad = "fatma" },
-                new Ogrenci() { Id = 180101099,AdSoyad="ahmet"},
-                new Ogrenci() { Id = 180101020, AdSoyad = "betul" },
-                new Ogrenci() { Id = 180101021, AdSoyad = "ezgi" },
-                new Ogrenci() { Id = 180101029,AdSoyad="Emine Yıldız"},
-                new Ogrenci() { Id = 180101019, AdSoyad = "demir" },
-                new Ogrenci() { Id = 180101049, AdSoyad = "ali" },
-                new Ogrenci() { Id = 180101059,AdSoyad="mehmet"},
-                new Ogrenci() { Id = 180101069, AdSoyad = "ayse" },
-                new Ogrenci() { Id = 180101079, AdSoyad = "sdferrgee" },
-                new Ogrenci() { Id = 180101069, AdSoyad = "ayse" },
-                new Ogrenci() { Id = 180101079, AdSoyad = "sdferrgee" },
-                new Ogrenci() { Id = 180101089, AdSoyad = "fatma" },
-                new Ogrenci() { Id = 180101099,AdSoyad="ahmet"},
-                new Ogrenci() { Id = 180101020, AdSoyad = "betul" },
-                new Ogrenci() { Id = 180101021, AdSoyad = "ezgi" },
-                new Ogrenci() { Id = 180101089, AdSoyad = "fatma" },
-                new Ogrenci() { Id = 180101099,AdSoyad="ahmet"},
-                new Ogrenci() { Id = 180101020, AdSoyad = "betul" },
-                new Ogrenci() { Id = 180101021, AdSoyad = "ezgi" },
-                new Ogrenci() { Id = 180101029,AdSoyad="Emine Yıldız"},
-                new Ogrenci() { Id = 180101019, AdSoyad = "demir" },
-                new Ogrenci() { Id = 180101049, AdSoyad = "ali" },
-                new Ogrenci() { Id = 180101059,AdSoyad="mehmet"}
-            };
-            return View(ogr);
+
+            return View();
         }
 
         //M-205

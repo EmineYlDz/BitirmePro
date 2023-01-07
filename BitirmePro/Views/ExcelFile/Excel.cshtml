@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Excel</title>
+    <style>
+        .con {
+            margin: 30px;
+            padding: 30px;
+            float: left;
+            width: 2000px;
+        }
+        table, th, td {
+            border-collapse: collapse;
+            text-align: left;
+            padding: 15px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        @using (Html.BeginForm("Upload", "ExcelFile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+           <table>
+               <tr>
+                   <td>
+                       Yüklenecek Dosya:
+                       <input type="file" name="UploadFile" />
+                   </td>
+                   <spac></spac>
+                   
+               </tr>
+               
+               <spac></spac>
+               <tr>
+                   <td colspan="4">
+                       <input input type = "submit" name = "submit"  value = "Upload"  style="background-color: #cfb1ff "/>
+                   </td>
+               </tr>
+           </table>
+        }
+        @ViewBag.mas2
+        </div>
+</body>
+</html>
