@@ -10,6 +10,7 @@ namespace BitirmePro.Controllers
 {
     public class TablolarController : Controller
     {
+        private ExcelImportDBEntities2 db = new ExcelImportDBEntities2();
         // GET: Tablolar
         public ActionResult Tablolar()
         {
@@ -25,6 +26,11 @@ namespace BitirmePro.Controllers
             ViewBag.su1 = Sutun1;
             ViewBag.su2 = Sutun2;
             ViewBag.su3 = Sutun3;
+
+
+            int t = ((5 * Sutun1) + (5 * Sutun2) + (5 * Sutun3));
+            ViewBag.d = t;
+
 
             SqlConnection conn = new SqlConnection("Server=DESKTOP-MC7TQNE\\SQLExpress;Database=ExcelImportDB;Trusted_Connection=True;");
             SqlCommand cmd = new SqlCommand("select Id,AdSoyad from Ogrenci1",conn);
@@ -47,6 +53,7 @@ namespace BitirmePro.Controllers
 
             return View(ogrenci);
         }
+
 
         //M-205
         public ActionResult KisiSinif2()
@@ -76,6 +83,7 @@ namespace BitirmePro.Controllers
             ViewBag.su3 = Sutun3;
             return View();
         }
+        
 
     }
 }
