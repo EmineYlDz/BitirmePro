@@ -53,7 +53,7 @@ namespace BitirmePro.Controllers
 
             return View(ogrenci);
         }
-
+        
 
         //M-205
         public ActionResult KisiSinif2()
@@ -65,9 +65,26 @@ namespace BitirmePro.Controllers
         {
             ViewBag.su2 = Sutun2;
             ViewBag.su3 = Sutun3;
+            SqlConnection conn = new SqlConnection("Server=DESKTOP-MC7TQNE\\SQLExpress;Database=ExcelImportDB;Trusted_Connection=True;");
+            SqlCommand cmd = new SqlCommand("select Id,AdSoyad from Ogrenci1", conn);
 
-            
-            return View();
+            List<Ogrenci1> ogrenci = new List<Ogrenci1>();
+
+            conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                ogrenci.Add(
+                      new Ogrenci1
+                      {
+                          Id = (int)dr["Id"],
+                          AdSoyad = (string)dr["AdSoyad"],
+                      });
+            }
+            conn.Close();
+
+            return View(ogrenci);
         }
 
 

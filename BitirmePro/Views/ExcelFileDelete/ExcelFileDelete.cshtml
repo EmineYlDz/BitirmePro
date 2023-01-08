@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ExcelFileDelete</title>
+    <style>
+        .con {
+            margin: 30px;
+            padding: 30px;
+            float: left;
+            width: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        @using (Html.BeginForm("Delete", "ExcelFileDelete", FormMethod.Post))
+        {
+            <input type="submit" name="submit" value="Kaydı Sil" />
+
+        }
+        <h5 style="color:red">@ViewBag.mas</h5>
+        <h5 style="color:red">@ViewBag.mas1</h5>
+
+    </div>
+</body>
+</html>

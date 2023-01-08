@@ -128,17 +128,14 @@
 
                 </table>
             </div>
-            @using (Html.BeginForm("Delete", "Delete", FormMethod.Post))
-            {
-                <input type="hidden" name="KisiSayi" value="@ViewBag.d"/>
-                <input type="submit" name="KisiSayi" />
-            }
 
         </div>
-        
+        @using (Html.BeginForm("Delete", "Delete", FormMethod.Post))
+        {
+            <input type="hidden" name="KisiSayi" value="@x" />
+            <input type="submit" name="KisiSayi" style="background-color:red ; color:black ; height:40px ; width:80px" />
+        }
 
-
-        
 
     </div>
 </body>

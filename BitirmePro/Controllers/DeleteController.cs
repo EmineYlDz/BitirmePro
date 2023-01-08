@@ -18,7 +18,8 @@ namespace BitirmePro.Controllers
         [HttpPost]
         public ActionResult Delete(int KisiSayi)
         {
-            for (int a = 0; a < KisiSayi; a++)
+            //ViewBag.d = KisiSayi-1;
+            for (int a = 0; a < KisiSayi - 1; a++)
             {
                 var ogrenci = db.Ogrenci1.Find(a);
                 if (ogrenci != null)

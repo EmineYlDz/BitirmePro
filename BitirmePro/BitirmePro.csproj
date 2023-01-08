@@ -152,6 +152,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DeleteController.cs" />
     <Compile Include="Controllers\ExcelFileController.cs" />
+    <Compile Include="Controllers\ExcelFileDeleteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TablolarController.cs" />
     <Compile Include="Controllers\TabloOlusturController.cs" />
@@ -281,6 +282,8 @@
     <Content Include="Views\Tablolar\KisiSinif1.cshtml" />
     <Content Include="Views\Tablolar\KisiSinif3.cshtml" />
     <Content Include="Views\ExcelFile\Excel.cshtml" />
+    <Content Include="Views\Delete\Delete.cshtml" />
+    <Content Include="Views\ExcelFileDelete\ExcelFileDelete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
