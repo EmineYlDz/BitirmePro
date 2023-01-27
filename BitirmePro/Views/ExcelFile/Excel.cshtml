@@ -1,6 +1,6 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -11,16 +11,17 @@
     <title>Excel</title>
     <style>
         .con {
-            margin: 30px;
-            padding: 30px;
+            margin: 100px;
+            padding: 10px;
             float: left;
             width: 2000px;
         }
+
         table, th, td {
-            border-collapse: collapse;
-            text-align: left;
+          
+            text-align: right;
             padding: 15px;
-            margin: 10px;
+            margin: 5px;
         }
     </style>
 </head>
@@ -28,25 +29,37 @@
     <div class="con">
         @using (Html.BeginForm("Upload", "ExcelFile", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
-           <table>
-               <tr>
-                   <td>
-                       Yüklenecek Dosya:
-                       <input type="file" name="UploadFile" />
-                   </td>
-                   <spac></spac>
-                   
-               </tr>
-               
-               <spac></spac>
-               <tr>
-                   <td colspan="4">
-                       <input input type = "submit" name = "submit"  value = "Upload"  style="background-color: #cfb1ff "/>
-                   </td>
-               </tr>
-           </table>
+        <table align="left">
+            <tr>
+                <td>
+                    <h4 style="text-align:left">Yüklenecek Dosya:</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                    <input type="file" name="UploadFile" />
+                </td>
+                <spac></spac>
+
+            </tr>
+
+            <spac></spac>
+            <tr>
+                <td colspan="4">
+                    <input input type="submit" name="submit" value="Upload" style="background-color: #cfb1ff " />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h5 style="color:red; text-align:left">@ViewBag.mas2</h5>
+                </td>
+            </tr>
+            
+        </table>
+            
         }
-        <h5 style="color:red">@ViewBag.mas2</h5>
-        </div>
+
+    </div>
 </body>
 </html>

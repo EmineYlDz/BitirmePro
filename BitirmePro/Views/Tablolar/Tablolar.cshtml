@@ -17,21 +17,47 @@
                 width: 250px;
                 text-align: center
             }
+            .column {
+                float: left;
+                width: auto;
+                margin: 30px;
+            }
+
+            /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
         </style>
     </head>
 
     <body id="container">
-        <div class="city">
-            <h2>@Html.ActionLink("M-205", "KisiSinif2", "Tablolar", new { style = "color:black" })</h2>
-        </div>
-        <div class="city">
-            <h2>@Html.ActionLink("M-108", "KisiSinif1", "Tablolar", new { style = "color:black" })</h2>
+        <div class="row">
+            <div class="column">
+                <div class="city">
+                    <h2>@Html.ActionLink("M205", "KisiSinif2", "Tablolar", new { style = "color:black" })</h2>
+                </div>
+                <div class="city">
+                    <h2>@Html.ActionLink("M108", "KisiSinif1", "Tablolar", new { style = "color:black" })</h2>
 
-        </div>
-        <div class="city">
-            <h2>@Html.ActionLink("M-109", "KisiSinif3", "Tablolar", new { style = "color:black" })</h2>
+                </div>
+                <div class="city">
+                    <h2>@Html.ActionLink("M109", "KisiSinif3", "Tablolar", new { style = "color:black" })</h2>
 
+                </div>
+            </div>
+            <div class="column">
+                <div class="city">
+                    <h2>@Html.ActionLink("M110", "KisiM110", "Tablolar", new { style = "color:black" })</h2>
+                </div>
+                <div class="city">
+                    <h2>@Html.ActionLink("M111", "KisiM111", "Tablolar", new { style = "color:black" })</h2>
+
+                </div>
+            </div>
         </div>
+        
 
     </body>
 </html>

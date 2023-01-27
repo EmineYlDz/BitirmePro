@@ -12,9 +12,11 @@ namespace BitirmePro.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Ogrenci1
+    public partial class Ogrenci3
     {
-        public int Öğrenci_Numarası { get; set; }
-        public string AdSoyad { get; set; }
+        public int SÄ±ra { get; set; }
+        public Nullable<int> NumarasÄ± { get; set; }
+        public string AdÄ± { get; set; }
+        public string SoyadÄ± { get; set; }
     }
 }

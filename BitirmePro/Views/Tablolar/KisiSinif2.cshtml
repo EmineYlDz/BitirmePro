@@ -55,6 +55,12 @@
                                        placeholder="3.Sutun" v-on:input="calistir3" v-model="Sutun3" />
                                 <h6 style="color:indianred">{{uyari3}}</h6>
                             </div>
+                            <div class="column">
+                                <label for="kisi">4.Sutunda Kaçar Kişi Otursun?</label>
+                                <input name="Sutun4" runat="server" CssClass="form-control"
+                                       placeholder="4.Sutun" v-on:input="calistir4" v-model="Sutun4" />
+                                <h6 style="color:indianred">{{uyari4}}</h6>
+                            </div>
                         </div>
                         <button type="submit">Submit</button>
                     </div>
@@ -68,7 +74,8 @@
                     data() {
                         return {
                             uyari2: null,
-                            uyari3: null
+                            uyari3: null,
+                            uyari4: null
 
                         }
 
@@ -95,6 +102,17 @@
                             }
                             else {
                                 this.uyari3 = null
+                            }
+                        },
+                        calistir4: function (event) {
+                            var gelen = event.target.value
+                            console.log(gelen)
+
+                            if (isNaN(parseInt(gelen)) || parseInt(gelen) <= 0 || parseInt(gelen) > 3) {
+                                this.uyari4 = 'Bir sayı giriniz!'
+                            }
+                            else {
+                                this.uyari4 = null
                             }
                         },
 

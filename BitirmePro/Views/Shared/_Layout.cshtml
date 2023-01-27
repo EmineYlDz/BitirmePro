@@ -18,7 +18,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #bdbebd ">
         <div class="container " style="height: 75px" >
             <div class="nav navbar-nav duz ">
-                <img style="height:75px;width:90px" src="~/Content/image/kelebek.png" />
+                <img style="height:75px;width:90px" src="~/Content/image/logo1.png" />
             </div>
             <span></span>
             <br />
@@ -29,7 +29,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <ul class="nav navbar-nav">
-                    <li style="font-size:large">@Html.ActionLink("KELEBEK", "Index", "Home", new { @class = "navbar-brand" }, new { style = "color: darkred " })</li>
+                    <li style="font-size:large">@Html.ActionLink("Ana Sayfa", "Index", "Home", new { @class = "navbar-brand" }, new { style = "color: darkred " })</li>
                 </ul>
             </div>
             <div class="navbar-collapse collapse ">
@@ -46,9 +46,9 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
+        @*<footer>
             <p>&copy; @DateTime.Now.Year - ASP.NET Uygulamam</p>
-        </footer>
+        </footer>*@
     </div>
 
     @Scripts.Render("~/bundles/jquery")

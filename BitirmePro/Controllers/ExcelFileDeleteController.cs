@@ -9,14 +9,14 @@ namespace BitirmePro.Controllers
 {
     public class ExcelFileDeleteController : Controller
     {
-        private ExcelImportDBEntities2 db = new ExcelImportDBEntities2();
+        private ExcelImportDBEntities4 db = new ExcelImportDBEntities4();
         // GET: ExcelFileDelete
         
         public ActionResult ExcelFileDelete()
         {
-            var ogrenci = db.Ogrenci1.ToList();
+            var ogrenci = db.Ogrenci3.ToList();
 
-            if (db.Ogrenci1.Count() == 0)
+            if (db.Ogrenci3.Count() == 0)
             {
                 ViewBag.mas1 = "Kayıtlı Veriler Silindi!";
             }
@@ -30,13 +30,13 @@ namespace BitirmePro.Controllers
         [HttpPost]
         public ActionResult Delete()
         {
-            var ogrenci = db.Ogrenci1.ToList();
+            var ogrenci = db.Ogrenci3.ToList();
             foreach (var d in ogrenci)
             {
-                db.Ogrenci1.Remove(d);
+                db.Ogrenci3.Remove(d);
             }
             db.SaveChanges();
-            if (db.Ogrenci1.Count() == 0)
+            if (db.Ogrenci3.Count() == 0)
             {
                 ViewBag.mas1 = "Kayıtlı Veriler Silindi!";
             }

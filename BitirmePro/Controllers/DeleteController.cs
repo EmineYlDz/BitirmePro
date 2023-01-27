@@ -9,7 +9,7 @@ namespace BitirmePro.Controllers
 {
     public class DeleteController : Controller
     {
-        private ExcelImportDBEntities2 db = new ExcelImportDBEntities2();
+        private ExcelImportDBEntities4 db = new ExcelImportDBEntities4();
         // GET: Delete
         public ActionResult Index()
         {
@@ -18,18 +18,15 @@ namespace BitirmePro.Controllers
         [HttpPost]
         public ActionResult Delete(int KisiSayi)
         {
-            //ViewBag.d = KisiSayi-1;
-            for (int a = 0; a < KisiSayi - 1; a++)
-            {
-                var ogrenci = db.Ogrenci1.Find(a);
-                if (ogrenci != null)
-                {
-                    db.Ogrenci1.Remove(ogrenci);
-                }
-                db.SaveChanges();
-            }
+            var ogrenci = db.Ogrenci3.Take(KisiSayi-1).ToList();
+             if(ogrenci != null)
+             {
+                db.Ogrenci3.RemoveRange(ogrenci);
+             }   
+             
+            db.SaveChanges();
 
-            return View();
+            return RedirectToAction("Index","Home");
         }
     }
 }

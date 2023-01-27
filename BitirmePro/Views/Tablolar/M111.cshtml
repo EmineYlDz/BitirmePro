@@ -4,11 +4,13 @@
 }
 
 <!DOCTYPE html>
+
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>M205</title>
+    <title>M111</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <style>
         .con {
@@ -31,7 +33,7 @@
             clear: both;
         }
 
-        table,th, td {
+        table, th, td {
             border: 2px solid black;
             border-collapse: collapse;
             text-align: left;
@@ -42,32 +44,30 @@
     </style>
     @{ int x = 1; }
 </head>
-    <body>
-
-        <div class="con">
-            <span></span>
+<body>
+    <div class="con">
+        <span></span>
+        @using (Html.BeginForm("Delete", "Delete", FormMethod.Post))
+        {
             <div class="row">
-                <h2 class="col-md-offset-2">M205</h2>
+                <h2 class="col-md-offset-2">M111</h2>
                 <div class="column">
                     <table>
                         @{
                             for (int b = 0; b < 10; b++)
                             {
-                                <tr style="height:70px">
+                                <tr style="height:90px">
                                     @{
-                                        for (int c = 0; c < 1; c++)
+                                        for (int c = 0; c < ViewBag.su1; c++)
                                         {
                                             if (Model.Count > 0)
                                             {
                                                 <th style="max-width:110px">
                                                     <h5>@x</h5>
                                                     <h5>@Model[0].Numarası</h5>
-                                                    <h5 style="max-block-size:max-content">
-                                                        @Model[0].Adı
-                                                    </h5>
-                                                    <h5 style="max-block-size:max-content">
-                                                        @Model[0].Soyadı
-                                                    </h5>
+                                                    <h5 style="max-block-size:max-content"> @Model[0].Adı </h5>
+                                                    <h5 style="max-block-size:max-content">@Model[0].Soyadı</h5>
+
                                                 </th>
                                                 Model.RemoveAt(0);
                                                 x++;
@@ -83,7 +83,7 @@
                 <div class="column">
                     <table>
                         @{
-                            for (int b = 0; b < 13; b++)
+                            for (int b = 0; b < 12; b++)
                             {
                                 <tr style="height:90px">
                                     @{
@@ -94,8 +94,8 @@
                                                 <th style="max-width:110px">
                                                     <h5>@x</h5>
                                                     <h5>@Model[0].Numarası</h5>
-                                                    <h5 style="max-block-size:max-content">@Model[0].Adı </h5>
-                                                    <h5 style="max-block-size:max-content"> @Model[0].Soyadı</h5>
+                                                    <h5 style="max-block-size:max-content"> @Model[0].Adı </h5>
+                                                    <h5 style="max-block-size:max-content">@Model[0].Soyadı</h5>
                                                 </th>
                                                 Model.RemoveAt(0);
                                                 x++;
@@ -110,9 +110,9 @@
                 <div class="column">
                     <table>
                         @{
-                            for (int b = 0; b < 13; b++)
+                            for (int b = 0; b < 12; b++)
                             {
-                                <tr style="height:70px">
+                                <tr style="height:90px">
                                     @{
                                         for (int c = 0; c < ViewBag.su3; c++)
                                         {
@@ -121,12 +121,8 @@
                                                 <th style="max-width:110px">
                                                     <h5>@x</h5>
                                                     <h5>@Model[0].Numarası</h5>
-                                                    <h5 style="max-block-size:max-content">
-                                                        @Model[0].Adı
-                                                    </h5>
-                                                    <h5 style="max-block-size:max-content">
-                                                        @Model[0].Soyadı
-                                                    </h5>
+                                                    <h5 style="max-block-size:max-content"> @Model[0].Adı </h5>
+                                                    <h5 style="max-block-size:max-content">@Model[0].Soyadı</h5>
                                                 </th>
                                                 Model.RemoveAt(0);
                                                 x++;
@@ -136,46 +132,17 @@
                                 </tr>
                             }
                         }
-                    </table>
-                </div>
-                <div class="column">
-                    <table>
-                        @{
-                            for (int b = 0; b < 13; b++)
-                            {
-                                <tr style="height:70px">
-                                    @{
-                                        for (int c = 0; c < ViewBag.su4; c++)
-                                        {
-                                            if (Model.Count > 0)
-                                            {
-                                                <th style="max-width:110px">
-                                                    <h5>@x</h5>
-                                                    <h5>@Model[0].Numarası</h5>
-                                                    <h5 style="max-block-size:max-content">
-                                                        @Model[0].Adı
-                                                    </h5>
-                                                    <h5 style="max-block-size:max-content">
-                                                        @Model[0].Soyadı
-                                                    </h5>
-                                                </th>
-                                                Model.RemoveAt(0);
-                                                x++;
-                                            }
-                                        }
-                                    }
-                                </tr>
-                            }
-                        }
+
                     </table>
                 </div>
 
             </div>
-            @using (Html.BeginForm("Delete", "Delete", FormMethod.Post))
-            {
-                <input type="hidden" name="KisiSayi" value="@x" />
-                <input type="submit" name="KisiSayi" style="background-color:red ; color:black ; height:40px ; width:80px"/>
-            }
-        </div>
-    </body>
+            <input type="hidden" name="KisiSayi" value="@x" />
+            <input type="submit" name="KisiSayi" style="background-color:red ; color:black ; height:40px ; width:80px" />
+
+         }
+
+
+    </div>
+</body>
 </html>

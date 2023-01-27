@@ -19,7 +19,7 @@ namespace BitirmePro.Controllers
         [HttpPost]
         public ActionResult Upload(FormCollection formCollection)
         {
-            var ogrenciList = new List<Ogrenci1>();
+            var ogrenciList = new List<Ogrenci3>();
             if (Request != null)
             {
                 HttpPostedFileBase file = Request.Files["UploadFile"];
@@ -39,9 +39,11 @@ namespace BitirmePro.Controllers
                         var noOfRow = workSheet.Dimension.End.Row;
                         for (int rowIterator = 2; rowIterator<= noOfRow; rowIterator++)
                         {
-                            var ogrenci = new Ogrenci1();
-                            ogrenci.Id = Convert.ToInt32(workSheet.Cells[rowIterator, 1].Value);
-                            ogrenci.AdSoyad = workSheet.Cells[rowIterator, 2].Value.ToString();
+                            var ogrenci = new Ogrenci3();
+                            ogrenci.Sıra = Convert.ToInt32(workSheet.Cells[rowIterator, 1].Value);
+                            ogrenci.Numarası = Convert.ToInt32(workSheet.Cells[rowIterator, 2].Value);
+                            ogrenci.Adı = workSheet.Cells[rowIterator, 3].Value.ToString();
+                            ogrenci.Soyadı = workSheet.Cells[rowIterator, 4].Value.ToString();
                             ogrenciList.Add(ogrenci);
                         }
                     }
@@ -50,11 +52,11 @@ namespace BitirmePro.Controllers
                
             }
 
-            using(ExcelImportDBEntities2 excelImportDBEntities = new ExcelImportDBEntities2())
+            using(ExcelImportDBEntities4 excelImportDBEntities = new ExcelImportDBEntities4())
             {
                 foreach(var item in ogrenciList)
                 {
-                    excelImportDBEntities.Ogrenci1.Add(item);
+                    excelImportDBEntities.Ogrenci3.Add(item);
                 }
                 excelImportDBEntities.SaveChanges();
             }
