@@ -7,6 +7,7 @@
     <title>@ViewBag.Title - ASP.NET Uygulamam</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
     <style>
         .duz {
             float: left
@@ -16,7 +17,7 @@
 <body>
 
     <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #bdbebd ">
-        <div class="container " style="height: 75px" >
+        <div class="container " style="height: 75px">
             <div class="nav navbar-nav duz ">
                 <img style="height:75px;width:90px" src="~/Content/image/logo1.png" />
             </div>
@@ -47,12 +48,14 @@
         @RenderBody()
         <hr />
         @*<footer>
-            <p>&copy; @DateTime.Now.Year - ASP.NET Uygulamam</p>
-        </footer>*@
+                <p>&copy; @DateTime.Now.Year - ASP.NET Uygulamam</p>
+            </footer>*@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/html2pdf")
+    @*<script src="~/Scripts/html2pdf.bundle.min.js"></script>*@
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -1,8 +1,5 @@
 ﻿using BitirmePro.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace BitirmePro.Controllers
@@ -15,18 +12,22 @@ namespace BitirmePro.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Delete(int KisiSayi)
         {
-            var ogrenci = db.Ogrenci3.Take(KisiSayi-1).ToList();
-             if(ogrenci != null)
-             {
+            var ogrenci = db.Ogrenci3.Take(KisiSayi - 1).ToList();
+            if (ogrenci != null)
+            {
                 db.Ogrenci3.RemoveRange(ogrenci);
-             }   
-             
+            }
             db.SaveChanges();
 
             return RedirectToAction("Index","Home");
+
         }
+
     }
+
+    
 }
